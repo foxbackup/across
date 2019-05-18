@@ -12,19 +12,29 @@ wget --no-check-certificate https://raw.githubusercontent.com/foxbackup/across/m
 uname -r
 ```
 查看内核版本，显示为最新版就表示 OK 了
-
+```
 sysctl net.ipv4.tcp_available_congestion_control
+```
 返回值一般为：
+```
 net.ipv4.tcp_available_congestion_control = bbr cubic reno
+```
 或者为：
+```
 net.ipv4.tcp_available_congestion_control = reno cubic bbr
+```
 sysctl net.ipv4.tcp_congestion_control
+```
 返回值一般为：
+```
 net.ipv4.tcp_congestion_control = bbr
+```
 sysctl net.core.default_qdisc
+```
 返回值一般为：
+```
 net.core.default_qdisc = fq
-
+```
 
 # KMS
 
@@ -61,8 +71,11 @@ KMS 服务，用于在线激活 VOL 版本的 Windows 和 Office。
 下面列表里面含有的产品的 VL 版本或者能使用 key 进入 KMS 通道的产品，都支持使用 KMS 激活。
 
 Office 2019 & Office 2016：https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks
+
 Office 2013：https://technet.microsoft.com/zh-cn/library/dn385360.aspx
+
 Office 2010：https://technet.microsoft.com/zh-cn/library/ee624355(v=office.14).aspx
+
 Windows：https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys
 
 使用管理员权限运行 cmd 查看系统版本，命令如下：
@@ -83,10 +96,15 @@ slmgr /skms Your IP or Domain:1688
 slmgr /ato
 ```
 关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。
+
 找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\Office16
+
 64 位默认一般为 C:\Program Files\Microsoft Office\Office16
+
 Office16 是 Office 2016，Office15 就是 Office 2013，Office14 就是 Office 2010。
+
 打开以上所说的目录，应该有个 OSPP.VBS 文件。
+
 使用管理员权限运行 cmd 进入 Office 目录，命令如下：
 ```
 cd "C:\Program Files (x86)\Microsoft Office\Office16"
