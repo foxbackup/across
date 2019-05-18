@@ -29,15 +29,18 @@ net.core.default_qdisc = fq
 # KMS
 
 使用root用户登录，运行以下命令：
-
+```
 wget --no-check-certificate https://raw.githubusercontent.com/foxbackup/across/master/kms.sh && chmod +x kms.sh && ./kms.sh
+```
 安装完成后，输入以下命令查看端口号 1688 的监听情况
-
+```
 netstat -nxtlp | grep 1688
+```
 返回值类似于如下这样就表示 OK 了：
-
+```
 tcp        0      0 0.0.0.0:1688                0.0.0.0:*                   LISTEN      3200/vlmcsd         
 tcp        0      0 :::1688                     :::*                        LISTEN      3200/vlmcsd 
+```
 本脚本安装完成后，会将 KMS 服务加入开机自启动。
 
 使用命令：
